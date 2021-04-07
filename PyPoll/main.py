@@ -2,9 +2,9 @@ import csv
 import os
 
 # define relative path for the input and output files
-path = "/Users/vrmathur/Documents/Gtech/Python-Challenge/PyPoll/"
-inputfile = os.path.join(path, "Resources", "election_data.csv")
-outputfile = os.path.join(path, "Analysis", "pyPoll_analysis.txt")
+
+inputfile = os.path.join("Resources", "election_data.csv")
+outputfile = os.path.join("Analysis", "pyPoll_analysis.txt")
 
 # read the CSV file and store values of each column into lists
 with open(inputfile) as csvfile:
@@ -53,7 +53,6 @@ elif o_tooley_total > khan_total > correy_total > li_total:
        Winner = "O'Tooley_total"
 
 # print each candidate's name, vote percentage, and total number of votes
-
 print(f'Election Results')
 print(f'-------------------------')
 print(f'Total Votes: {Total_Votes}')
@@ -66,7 +65,19 @@ print(f'-------------------------')
 print(f'Winner: {Winner}')
 print(f'-------------------------')
 
+with open(outputfile, 'w') as text_file:
 
+       print(f'Election Results', file=text_file)
+       print(f'----------------------', file=text_file)
+       print(f'Total Votes: {Total_Votes}', file=text_file)
+       print(f'----------------------', file=text_file)
+       print(f'Khan: {khan_percent:.3%} ({khan_total})', file=text_file)
+       print(f'Correy: {correy_percent:.3%} ({correy_total})', file=text_file)
+       print(f'Li: {li_percent:.3%} ({li_total})', file=text_file)
+       print(f"O'Tooley: {o_tooley_percent:.3%} ({o_tooley_total})", file=text_file)
+       print(f'-------------------------', file=text_file)
+       print(f'Winner: {Winner}', file=text_file)
+       print(f'-------------------------', file=text_file)
 
 
 

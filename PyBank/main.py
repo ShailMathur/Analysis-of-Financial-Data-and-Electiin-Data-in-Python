@@ -8,8 +8,7 @@ def Average(list):
     # round the number to 2 decimal points and return value
     return round(st.mean(list), 2) 
 
-# define relative path for the input and output files-
-#path = "/Users/vrmathur/Documents/Gtech/Python-Challenge/PyBank/"
+# define relative path for the input and output files
 inputfile = os.path.join("Resources", "budget_data.csv")
 outputfile = os.path.join("Analysis", "pyBank_analysis.txt")
 
@@ -73,7 +72,7 @@ print(f'Greatest Decrease in Profits: {decrease_date} (${greatest_decrease_profi
 with open(outputfile, 'w') as text_file:
     print(f'Financial Analysis', file=text_file)
     print(f'___________________________', file=text_file)
-    print(f'Total Months: {Dates}', file=text_file)
+    print(f'Total Months: {len(Dates)}', file=text_file)
     print(f'Total: ${totalProLoss}', file=text_file)
     print(f'Average Change: ${AverageChange:.2f}', file=text_file)
     print(f'Greatest Increase in Profits: {increase_date} ({greatest_increase_profits})', file=text_file)
